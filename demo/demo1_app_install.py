@@ -22,8 +22,11 @@ driver.find_element(AppiumBy.XPATH, "//android.widget.TextView[@text='Sign in']"
 driver.find_element(AppiumBy.XPATH, "//android.widget.EditText[contains(@content-desc,'username')]").send_keys(
     'abc@xyz.com')
 driver.find_element(AppiumBy.XPATH, "//android.widget.EditText[@content-desc='Password']").send_keys('abc@xyz')
-
-print(driver.page_source)
+driver.find_element(AppiumBy.XPATH, "(//android.widget.TextView[@text='Sign in'])[2]").click()
+actual_error = driver.find_element(AppiumBy.XPATH, "//*[contains(@text,'issue')]").text
+print(actual_error)
+actual_error = driver.find_element(AppiumBy.XPATH, "//*[contains(@text,'issue')]").get_attribute("text")
+print(actual_error)
 
 time.sleep(5)
 driver.quit()
