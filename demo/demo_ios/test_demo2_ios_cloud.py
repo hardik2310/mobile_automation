@@ -53,4 +53,4 @@ class TestSampleApp(AppiumIosConfig):
 
         # click on ok
         self.driver.find_element(AppiumBy.XPATH, "//XCUIElementTypeButton[@name='OK']").click()
-        assert_that('This is a native alert').contains(actual_text)
+        assert_that('This is a native alert.').contains(actual_text)
