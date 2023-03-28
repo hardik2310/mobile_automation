@@ -8,15 +8,15 @@ class AppiumIosConfig:
     @pytest.fixture(scope="function", autouse=True)
     def launch_app(self):
         des_cap = {
-            "app": "bs://c700ce60cf13ae8ed97705a55b8e022f13c5827c",
+            "app": "bs://606fc48192496fabfd6c14cb96470172af423dc9",
             "deviceName": "iPhone 11 Pro",
-            "platformVersion": "13",
+            "platformVersion": "15",
             "bstack:options": {
-                "userName": "gosaihardik1",
-                "accessKey": "ZwsiyCq9XUqmzxzmp4xW",
+                "userName": "hardikgosai_j7niqY",
+                "accessKey": "3ezjtyxJ7qFtwBL5pEfF",
                 "projectName": "First Python project",
-                "buildName": "browserstack-build-1-ios",
-                "sessionName": "BStack first_test-ios"
+                "buildName": "browserstack-build-1",
+                "sessionName": "BStack first_test"
             }
         }
 
@@ -42,7 +42,6 @@ class TestSampleApp(AppiumIosConfig):
             "secret_sauce")
         self.driver.find_element(AppiumBy.IOS_PREDICATE, "name=='test-LOGIN'").click()
 
-        # add to cart 4 items
         self.driver.find_element(AppiumBy.XPATH, "//XCUIElementTypeOther[@name='test-ADD TO CART']").click()
         self.driver.find_element(AppiumBy.XPATH, "//XCUIElementTypeOther[@name='test-ADD TO CART']").click()
         self.driver.find_element(AppiumBy.XPATH, "//XCUIElementTypeOther[@name='test-ADD TO CART']").click()
