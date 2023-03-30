@@ -57,12 +57,15 @@ class TestInstallKhan(AppiumConfig):
         x2 = size_dic['width'] * (50 / 100)
         y2 = size_dic['height'] * (25 / 100)
 
+        self.driver.implicitly_wait(0)
         while len(self.driver.find_elements(AppiumBy.ANDROID_UIAUTOMATOR,
                                             'UiSelector().textContains("Take Course Challenge")')) == 0:
-            self.driver.swipe(x1, y1, x2, y2, 100)
+            self.driver.swipe(x1, y1, x2, y2, 1000)
         self.driver.find_element(AppiumBy.XPATH, "//*[contains(@text,'Take Course Challenge')]").click()
 
         self.driver.find_element(AppiumBy.XPATH, "//*[contains(@text,\"Let's go\")]").click()
+        self.driver.implicitly_wait(10)
+
         # self.driver.find_element(AppiumBy.XPATH, "//android.view.View[3]").click()
         #
         # actual_text = self.driver.find_element(AppiumBy.XPATH, "//*[contains(@text,'Give it')]").text
