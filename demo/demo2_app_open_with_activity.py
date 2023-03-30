@@ -13,7 +13,8 @@ class AppiumConfig:
             "platformName": "android",
             "deviceName": "oneplus",
             "appPackage": "org.khanacademy.android",
-            "appActivity": "org.khanacademy.android.ui.library.MainActivity"
+            "appActivity": "org.khanacademy.android.ui.library.MainActivity",
+            "noReset": True
         }
 
         self.driver = webdriver.Remote(command_executor="http://localhost:4723/wd/hub", desired_capabilities=des_cap)

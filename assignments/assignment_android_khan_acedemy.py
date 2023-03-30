@@ -4,7 +4,6 @@ import time
 import pytest
 from appium import webdriver
 from appium.webdriver.common.appiumby import AppiumBy
-from assertpy import assert_that
 
 
 class AppiumConfig:
@@ -69,7 +68,7 @@ class TestInstallKhan(AppiumConfig):
         # actual_text = self.driver.find_element(AppiumBy.XPATH, "//*[contains(@text,'Give it')]").text
         # assert_that(actual_text).is_equal_to("Give it another shot!")
         # print(actual_text)
-        #
+
         # actual_text2 = self.driver.find_element(AppiumBy.XPATH, "//*[contains(@text,'Try again')]").text
         # assert_that(actual_text2).is_equal_to("Try again Get help. Skip for now.")
         # print(actual_text2)
